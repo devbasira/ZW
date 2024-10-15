@@ -15,7 +15,6 @@
   }
   
   .animate-scroll { 
-    display: inline-block;
     animation:  5s slide linear infinite; /* Adjust timing for smooth scroll */
   }
   .animate-scroll img {
