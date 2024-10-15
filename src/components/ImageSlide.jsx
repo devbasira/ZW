@@ -13,8 +13,12 @@ export const ImageSlide = () => {
         <img className=' inline-block w-16 h-auto' src={logo_black} alt="Logo 1" />
         <img className=' inline-block w-56 h-auto' src={basira_logo_black} alt="Logo 2" />
         <img className=' inline-block w-56 h-auto' src={sustenance_logo_black} alt="Logo 3" />
-      </div>
-      <div className='gap-20 animate-scroll inline-block mx-20'>
+        <img className=' inline-block w-16 h-auto' src={logo_black} alt="Logo 1" />
+        <img className=' inline-block w-56 h-auto' src={basira_logo_black} alt="Logo 2" />
+        <img className=' inline-block w-56 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+        <img className=' inline-block w-16 h-auto' src={logo_black} alt="Logo 1" />
+        <img className=' inline-block w-56 h-auto' src={basira_logo_black} alt="Logo 2" />
+        <img className=' inline-block w-56 h-auto' src={sustenance_logo_black} alt="Logo 3" />
         <img className=' inline-block w-16 h-auto' src={logo_black} alt="Logo 1" />
         <img className=' inline-block w-56 h-auto' src={basira_logo_black} alt="Logo 2" />
         <img className=' inline-block w-56 h-auto' src={sustenance_logo_black} alt="Logo 3" />
@@ -22,6 +26,14 @@ export const ImageSlide = () => {
         <img className=' inline-block w-56 h-auto' src={basira_logo_black} alt="Logo 2" />
         <img className=' inline-block w-56 h-auto' src={sustenance_logo_black} alt="Logo 3" />
       </div>
+      {/* <div className='gap-20 animate-scroll inline-block mx-20'>
+        <img className=' inline-block w-16 h-auto' src={logo_black} alt="Logo 1" />
+        <img className=' inline-block w-56 h-auto' src={basira_logo_black} alt="Logo 2" />
+        <img className=' inline-block w-56 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+        <img className=' inline-block w-16 h-auto' src={logo_black} alt="Logo 1" />
+        <img className=' inline-block w-56 h-auto' src={basira_logo_black} alt="Logo 2" />
+        <img className=' inline-block w-56 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+      </div> */}
     </div>
   )
 }

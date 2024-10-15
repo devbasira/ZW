@@ -10,12 +10,12 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-50%);
+      transform: translateX(-100%);
     }
   }
   
   .animate-scroll { 
-    animation:  5s slide linear infinite; /* Adjust timing for smooth scroll */
+    animation:  12s slide linear infinite; /* Adjust timing for smooth scroll */
   }
   .animate-scroll img {
     margin-left: 40px;
