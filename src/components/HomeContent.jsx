@@ -24,7 +24,7 @@ export const HomeContent = () => {
         About me
       </h3>
   
-      <div className={`flex ${isReverseLayout ? 'mb-16' : ''} justify-center md:justify-end mt-8`}>
+      <div className={`flex ${isReverseLayout ? 'mb-16' : ''}  justify-end mt-8`}>
         <img
           className='pic-img rounded-full  lg:w-[559px] lg:h-[559px] md:w-[400px] md:h-[400px] sm:w-[300px] sm:h-[300px] object-cover'
           src={photo}

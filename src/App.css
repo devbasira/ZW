@@ -32,24 +32,31 @@
     
   }
   
-  .red-overlay.left {
-    left: 0;
-    width: 350px;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-    /* Left side gradient with smooth transition */
-  }
-  
-  /* Right overlay */
-  .red-overlay.right {
-    right: 0;
-    width: 350px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-    /* Right side gradient with smooth transition */
-  }
+ /* Left overlay */
+ .red-overlay.left {
+  left: 0;
+  width: 275px; /* Set to 450px */
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 100%);
+  /* Full white up to 60%, then fades out */
+}
+
+/* Right overlay */
+.red-overlay.right {
+  position: absolute;
+  right: 0;
+  width: 275px; /* Set to 450px */
+  background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 100%);
+  /* Full white up to 60%, then fades out */
+}
 
   @media (max-width: 768px) {
     .red-overlay.left,
     .red-overlay.right {
       width: 150px; /* Reduce overlay width on smaller screens */
+    }
+
+    .animate-scroll { 
+      animation:  5s slide linear infinite;
+      position: relative; /* Adjust timing for smooth scroll */
     }
   }

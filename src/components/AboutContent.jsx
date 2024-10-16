@@ -2,7 +2,7 @@ import React from 'react'
 
 export const AboutContent = () => {
     return (
-        <div className="flex items-center flex-col lg:grid lg:grid-cols-2 justify-between items-start bg-white w-screen px-4 md:px-16 lg:px-56 py-12 lg:py-[60px] border-t border-b">
+        <div className="flex items-center flex-col lg:grid lg:grid-cols-2 justify-between items-start bg-white w-screen px-4 md:px-16 lg:px-56 py-12 lg:py-[60px] border-t">
         {/* Left Column */}
         <div className="flex flex-col col-span-1 mb-8 lg:mb-0"> {/* Adds margin on smaller screens */}
           <h3 className="text-xl text-center lg:text-left">My Journey</h3>
