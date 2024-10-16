@@ -13,7 +13,7 @@ export const AboutContent = () => {
         <div className="flex flex-col col-span-1 space-y-8">
          
           <div className="flex flex-col">
-            <h3 className="text-lg">Bollywood</h3>
+            <h3 className="text-lg text-[#A4A4A4]">Bollywood</h3>
             <h3 className="text-[#A4A4A4]">
               Featured in critically acclaimed films like Dangal and The Sky is Pink, where I brought characters to life with raw authenticity.
             </h3>
@@ -22,13 +22,13 @@ export const AboutContent = () => {
    
           <div className="flex flex-col">
             <h3 className="text-lg">Building sustenance.community</h3>
-            <h3 className="text-[#A4A4A4]">
+            <h3 className="text-gray-500">
               Founder of 'sustenance.community,' a women-only platform that promotes modest living and meaningful sisterhood. Here, women find support, share wisdom, and grow together.
             </h3>
           </div>
           <div className="flex flex-col">
             <h3 className="text-lg">Entrepreneur</h3>
-            <h3 className="text-[#A4A4A4]">
+            <h3 className="text-gray-500">
               I express my voice through words, helping brands and individuals convey their stories with clarity and impact.
             </h3>
           </div>

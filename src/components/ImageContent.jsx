@@ -56,7 +56,7 @@ export const ImageContent = () => {
                     </div>
                     <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
                         <div className='flex flex-col'>
-                            <h2 className='text-white text-2xl'>sustenance.community</h2>
+                            <h2 className='text-2xl'>sustenance.community</h2>
                             <h2 className='text-[#A4A4A4]'>women-only community</h2>
                         </div>
                         <div>

@@ -6,7 +6,7 @@ import { Footer } from '../components/Footer'
 import { AboutContent } from '../components/AboutContent'
 export const About = () => {
   return (
-    <div className='w-screen h-screen bg-black'>
+    <div className='w-screen h-screen'>
     <Navbar />
     <HomeContent />
     <AboutContent />

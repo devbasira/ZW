@@ -1,8 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import photo from '../assets/photo.avif'
-import '../App.css'
-import { useLocation } from 'react-router-dom';
 export const HomeContent = () => {
   const isReverseLayout = location.pathname === '/about';
   console.log(isReverseLayout)

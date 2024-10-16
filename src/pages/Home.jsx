@@ -7,7 +7,7 @@ import { Footer } from '../components/Footer'
 
 export const Home = () => {
   return (
-    <div className='w-screen h-screen bg-black'>
+    <div className='w-screen h-screen'>
         <Navbar />
         <HomeContent />
         <ImageContent />

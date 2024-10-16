@@ -15,9 +15,41 @@
   }
   
   .animate-scroll { 
-    animation:  12s slide linear infinite; /* Adjust timing for smooth scroll */
+    animation:  12s slide linear infinite;
+    position: relative; /* Adjust timing for smooth scroll */
   }
   .animate-scroll img {
     margin-left: 40px;
     margin-right: 40px;
+  }
+
+
+  .red-overlay {
+    position: absolute;
+    top: 0;
+    height: 100%; /* Full height of the container */
+    z-index: 10;
+    
+  }
+  
+  .red-overlay.left {
+    left: 0;
+    width: 350px;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    /* Left side gradient with smooth transition */
+  }
+  
+  /* Right overlay */
+  .red-overlay.right {
+    right: 0;
+    width: 350px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    /* Right side gradient with smooth transition */
+  }
+
+  @media (max-width: 768px) {
+    .red-overlay.left,
+    .red-overlay.right {
+      width: 150px; /* Reduce overlay width on smaller screens */
+    }
   }
