@@ -8,7 +8,7 @@ import '../App.css';
 export const ImageSlide = () => {
 
   return (
-    <div className='logos relative overflow-x-hidden py-[30px] lg:py-[120px] text-center'>
+    <div className='logos relative overflow-x-hidden pb-[30px] lg:pb-[120px] text-center'>
       <div className='w-screen flex justify-center'>
         <div className='border-b max-w-[1250px] mb-32 w-4/5'></div>
       </div>
@@ -26,27 +26,32 @@ export const ImageSlide = () => {
           }}
           style={{ whiteSpace: 'nowrap' }} // Prevent line breaks for logos
         >
-          <img className='inline-block w-36 lg:w-52 h-auto' src={basira_logo_black} alt="Logo 2" />
-          <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
-          <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
-          <img className='inline-block w-36 lg:w-52 h-auto' src={basira_logo_black} alt="Logo 2" />
-          <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
-          <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
-          <img className='inline-block w-36 lg:w-52 h-auto' src={basira_logo_black} alt="Logo 2" />
-          <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
-          <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
-          <img className='inline-block w-36 lg:w-52 h-auto' src={basira_logo_black} alt="Logo 2" />
-          <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
-          <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
-          <img className='inline-block w-36 lg:w-52 h-auto' src={basira_logo_black} alt="Logo 2" />
-          <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
-          <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
-          <img className='inline-block w-36 lg:w-52 h-auto' src={basira_logo_black} alt="Logo 2" />
-          <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
-          <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
-          <img className='inline-block w-36 lg:w-52 h-auto' src={basira_logo_black} alt="Logo 2" />
-          <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
-          <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+           <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+           <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+           <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+           <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+           <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+           <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+           <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+           <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+           <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+           <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+           <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+           <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+           <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+           <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+           <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+           <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+           <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+           <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+           <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+           <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+           <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+           <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+           <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+           <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+           <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+           <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
         </motion.div>
         <div className='red-overlay right'></div>
       </div>

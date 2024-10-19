@@ -5,7 +5,7 @@ export const Footer = () => {
     const isReverseLayout = location.pathname === '/about';
     return (
         <div className='w-screen flex justify-center items-center'>
-            <div className='w-full max-w-[1800px] flex flex-col md:flex-row justify-between  py-10 items-center'>
+            <div className='w-full max-w-[1800px] flex flex-col md:flex-row justify-between h-[100px]  px-6 py-4 md:px-12 lg:px-28 4k:px-0 items-center'>
                 <div className='flex gap-2 flex-col md:flex-row items-center'>
                     <h3 className='text-[#A4A4A4] text-lg'>powered by </h3>
                     <Link to={'https://basira.studio/'}>

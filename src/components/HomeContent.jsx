@@ -26,15 +26,14 @@ export const HomeContent = () => {
               Through this ongoing journey, I’ve gained a new sense of purpose. Gradually, I became drawn to ideas that aligned with my evolving values. Now, I’m building Sustenance—a place for women to come together, find support, and share meaningful conversations rooted in faith and growth. It’s the kind of community I wish I had when navigating my own path.
             </h3>
           </div>
-
           <Link to={'/about'}>
-            <h3 className={`mt-8 ${isReverseLayout ? 'hidden' : 'flex'} text-[20px] md:text-[22px] font-light`}>
-              About me
+            <h3 className={`mt-8 ${isReverseLayout ? 'hidden' : 'flex'} text-[20px] md:text-[22px] font-medium`}>
+              Read more
             </h3>
           </Link>
           <div className={`flex ${isReverseLayout ? 'mb-16' : ''} justify-end mt-8`}>
             <img
-              className='pic-img rounded-full lg:w-[559px] lg:h-[559px] md:w-[400px] md:h-[400px] sm:w-[300px] sm:h-[300px] object-cover'
+              className='pic-img rounded-full object-cover lg:w-[559px] lg:h-[559px] md:w-[400px] md:h-[400px] sm:w-[300px] sm:h-[300px] w-[250px] h-[250px]' // Add default width and height for smaller screens
               src={photo}
               alt="About me"
             />
