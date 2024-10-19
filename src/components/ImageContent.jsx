@@ -37,7 +37,7 @@ export const ImageContent = () => {
                 }}
                 transition={{ duration: 2.0, ease: "easeOut" }}
             >
-                <div className="gap-8 flex flex-col bg-white w-screen px-4 md:px-16 lg:px-20 py-12 lg:py-[60px]">
+                <div className="gap-8 flex flex-col bg-white w-full max-w-[1800px] px-4 md:px-16 lg:px-20 py-12 lg:py-[60px]">
                     <div className="w-full md:w-8/12">
                         <h2 className="text-[24px] md:text-[38px] font-light">
                             A Journey to Authenticity: My Story

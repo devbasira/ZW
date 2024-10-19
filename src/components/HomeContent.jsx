@@ -1,18 +1,20 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import photo from '../assets/photo.avif'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
 export const HomeContent = () => {
+  const location = useLocation();
   const isReverseLayout = location.pathname === '/about';
-  console.log(isReverseLayout)
+
   return (
-    <div className={`flex ${isReverseLayout ? 'flex-col-reverse' : 'flex-col'} bg-white w-auto px-4 md:px-16 lg:px-56 py-12 lg:py-[60px]`}>
+    <div className={`flex ${isReverseLayout ? 'flex-col-reverse' : 'flex-col'} bg-white w-full max-w-[1200px] mx-auto px-4 md:px-16  py-12 lg:py-[60px] 4k:px-0`}>
       <motion.h1
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.0, ease: "easeOut" }}
       >
-        <div className={`flex ${isReverseLayout ? 'flex-col-reverse' : 'flex-col'} `}>
+        <div className={`flex ${isReverseLayout ? 'flex-col-reverse' : 'flex-col'}`}>
           <div className='flex flex-col space-y-6'>
             <h3 className='mt-4 text-[20px] md:text-[24px] sm:text-[20px] font-light leading-relaxed'>
               For years, I expressed myself through storytelling in Bollywood. I connected deeply with the characters I portrayed, but over time, I felt a shift within me. Despite how well I fit into that world, I realized it wasn’t where I truly belonged.
@@ -30,9 +32,9 @@ export const HomeContent = () => {
               About me
             </h3>
           </Link>
-          <div className={`flex ${isReverseLayout ? 'mb-16' : ''}  justify-end mt-8`}>
+          <div className={`flex ${isReverseLayout ? 'mb-16' : ''} justify-end mt-8`}>
             <img
-              className='pic-img rounded-full  lg:w-[559px] lg:h-[559px] md:w-[400px] md:h-[400px] sm:w-[300px] sm:h-[300px] object-cover'
+              className='pic-img rounded-full lg:w-[559px] lg:h-[559px] md:w-[400px] md:h-[400px] sm:w-[300px] sm:h-[300px] object-cover'
               src={photo}
               alt="About me"
             />
@@ -42,4 +44,3 @@ export const HomeContent = () => {
     </div>
   )
 }
-

@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        '1800px': '1800px', // Custom width
+      },
+      screens: {
+        '4k': '2560px', // Define a custom breakpoint for 4K screens
+      }
+    }
   },
   plugins: [],
 }

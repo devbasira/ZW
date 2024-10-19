@@ -4,7 +4,7 @@
         height: 300px;
     }
 }
-
+/* 
 @keyframes slide {
     from {
       transform: translateX(0);
@@ -13,46 +13,45 @@
       transform: translateX(-100%);
     }
   }
-  
+   */
+/* 
+   
   .animate-scroll { 
     animation:  12s slide linear infinite;
-    position: relative; /* Adjust timing for smooth scroll */
+    position: relative; 
   }
   .animate-scroll img {
     margin-left: 40px;
     margin-right: 40px;
-  }
+  } */
 
 
   .red-overlay {
-    position: absolute;
     top: 0;
-    height: 100%; /* Full height of the container */
+    height: 100%;
     z-index: 10;
     
   }
-  
- /* Left overlay */
- .red-overlay.left {
-  left: 0;
-  width: 275px; /* Set to 450px */
-  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 100%);
-  /* Full white up to 60%, then fades out */
-}
 
-/* Right overlay */
+
+  .red-overlay.left {
+  left: 0;
+  position: absolute;
+  width: 150px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 100%);
+  }
+
 .red-overlay.right {
   position: absolute;
   right: 0;
-  width: 275px; /* Set to 450px */
+  width: 150px;
   background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 100%);
-  /* Full white up to 60%, then fades out */
-}
+} 
 
   @media (max-width: 768px) {
     .red-overlay.left,
     .red-overlay.right {
-      width: 150px; /* Reduce overlay width on smaller screens */
+      width: 100px; /* Reduce overlay width on smaller screens */
     }
 
     .animate-scroll { 
