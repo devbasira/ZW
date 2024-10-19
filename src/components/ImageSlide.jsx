@@ -6,11 +6,6 @@ import sustenance_logo_black from '../assets/sustenance_logo_black.svg';
 import '../App.css';
 
 export const ImageSlide = () => {
-  const logos = [
-    { src: basira_logo_black, alt: 'Logo 2', width: '36', lgWidth: '52' },
-    { src: logo_black, alt: 'Logo 1', width: '8', lgWidth: '14' },
-    { src: sustenance_logo_black, alt: 'Logo 3', width: '36', lgWidth: '52' },
-  ];
 
   return (
     <div className='logos relative overflow-x-hidden py-[30px] lg:py-[120px] text-center'>
@@ -31,54 +26,27 @@ export const ImageSlide = () => {
           }}
           style={{ whiteSpace: 'nowrap' }} // Prevent line breaks for logos
         >
-          {logos.map((logo, index) => (
-            <img
-              key={index}
-              className={`inline-block w-${logo.width} lg:w-${logo.lgWidth} h-auto`}
-              src={logo.src}
-              alt={logo.alt}
-            />
-          ))}
-          {logos.map((logo, index) => (
-            <img
-              key={`${index}-duplicate`}
-              className={`inline-block w-${logo.width} lg:w-${logo.lgWidth} h-auto`}
-              src={logo.src}
-              alt={logo.alt}
-            />
-          ))}
-          {logos.map((logo, index) => (
-            <img
-              key={`${index}-duplicate`}
-              className={`inline-block w-${logo.width} lg:w-${logo.lgWidth} h-auto`}
-              src={logo.src}
-              alt={logo.alt}
-            />
-          ))}
-          {logos.map((logo, index) => (
-            <img
-              key={`${index}-duplicate`}
-              className={`inline-block w-${logo.width} lg:w-${logo.lgWidth} h-auto`}
-              src={logo.src}
-              alt={logo.alt}
-            />
-          ))}
-          {logos.map((logo, index) => (
-            <img
-              key={`${index}-duplicate`}
-              className={`inline-block w-${logo.width} lg:w-${logo.lgWidth} h-auto`}
-              src={logo.src}
-              alt={logo.alt}
-            />
-          ))}
-          {logos.map((logo, index) => (
-            <img
-              key={`${index}-duplicate`}
-              className={`inline-block w-${logo.width} lg:w-${logo.lgWidth} h-auto`}
-              src={logo.src}
-              alt={logo.alt}
-            />
-          ))}
+          <img className='inline-block w-36 lg:w-52 h-auto' src={basira_logo_black} alt="Logo 2" />
+          <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+          <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+          <img className='inline-block w-36 lg:w-52 h-auto' src={basira_logo_black} alt="Logo 2" />
+          <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+          <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+          <img className='inline-block w-36 lg:w-52 h-auto' src={basira_logo_black} alt="Logo 2" />
+          <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+          <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+          <img className='inline-block w-36 lg:w-52 h-auto' src={basira_logo_black} alt="Logo 2" />
+          <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+          <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+          <img className='inline-block w-36 lg:w-52 h-auto' src={basira_logo_black} alt="Logo 2" />
+          <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+          <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+          <img className='inline-block w-36 lg:w-52 h-auto' src={basira_logo_black} alt="Logo 2" />
+          <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+          <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
+          <img className='inline-block w-36 lg:w-52 h-auto' src={basira_logo_black} alt="Logo 2" />
+          <img className='inline-block w-8 lg:w-14 h-auto' src={logo_black} alt="Logo 1" />
+          <img className='inline-block w-36 lg:w-52 h-auto' src={sustenance_logo_black} alt="Logo 3" />
         </motion.div>
         <div className='red-overlay right'></div>
       </div>
