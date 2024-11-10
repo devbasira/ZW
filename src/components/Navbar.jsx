@@ -13,7 +13,7 @@ export const Navbar = () => {
         <div onClick={() => navigate('/')} className='flex items-center gap-2 cursor-pointer'>
           <img className='w-[35px] h-[35px] mx-4' src={logo_black} alt="" />
           <div className='flex flex-col'>
-            <h2>Zaira Wasim</h2>
+            <h2 className='font-bold'>Zaira Wasim</h2>
             <h2 className='text-[#A4A4A4]'>Creative Entrepreneur</h2>
           </div>
         </div>
