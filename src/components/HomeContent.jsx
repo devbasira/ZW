@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import photo from '../assets/photo.avif'
+import photo from '../assets/home_image.jpg'
+import photo_about from '../assets/about_image.jpg'
 import { Link, useLocation } from 'react-router-dom';
 
 export const HomeContent = () => {
@@ -27,14 +28,14 @@ export const HomeContent = () => {
             </h3>
           </div>
           <Link to={'/about'}>
-            <h3 className={`mt-8 ${isReverseLayout ? 'hidden' : 'flex'} text-[20px] md:text-[22px] font-medium`}>
+            <h3 className={`mt-8 ${isReverseLayout ? 'hidden' : 'flex'} text-[20px] md:text-[22px] font-light`}>
               Read more...
             </h3>
           </Link>
           <div className={`flex ${isReverseLayout ? 'mb-16' : ''} justify-end mt-8`}>
             <img
               className='pic-img rounded-full object-cover lg:w-[559px] lg:h-[559px] md:w-[400px] md:h-[400px] sm:w-[300px] sm:h-[300px] w-[250px] h-[250px]' // Add default width and height for smaller screens
-              src={photo}
+              src={(isReverseLayout ?? false) ? photo_about : photo}
               alt="About me"
             />
           </div>
