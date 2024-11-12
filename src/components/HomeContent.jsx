@@ -37,7 +37,7 @@ export const HomeContent = () => {
           <div className={`flex ${isReverseLayout ? 'mb-16' : ''} justify-end mt-8`}>
             {isReverseLayout ? (
               <img
-              className="pic-img rounded-full object-contain lg:w-[559px] lg:h-[559px] md:w-[400px] md:h-[400px] sm:w-[300px] sm:h-[300px] w-[250px] h-[250px]"
+              className="pic-img rounded-full object-contain border lg:w-[559px] lg:h-[559px] md:w-[400px] md:h-[400px] sm:w-[300px] sm:h-[300px] w-[250px] h-[250px]"
               src={logo} 
               alt="Logo"
             />
