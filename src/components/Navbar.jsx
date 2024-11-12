@@ -17,7 +17,7 @@ export const Navbar = () => {
             <h2 className="text-[#A4A4A4] -mt-1">Creative Entrepreneur</h2>
           </div>
         </div>
-        <Link to={'/about'} className={`${isReverseLayout ? 'hidden' : 'flex'}`}>About</Link>
+        {/* <Link to={'/about'} className={`${isReverseLayout ? 'hidden' : 'flex'}`}>About</Link> */}
       </div>
     </div>
   );

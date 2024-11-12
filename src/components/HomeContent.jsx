@@ -30,7 +30,7 @@ export const HomeContent = () => {
             </h3>
           </div>
           <Link to={'/about'}>
-            <h3 className={`mt-8 ${isReverseLayout ? 'hidden' : 'flex'} text-[20px] md:text-[22px] font-light`}>
+            <h3 className={`mt-8 ${isReverseLayout ? 'hidden' : 'flex'} text-[#A4A4A4] text-[20px] md:text-[22px] font-light`}>
               Read more...
             </h3>
           </Link>
