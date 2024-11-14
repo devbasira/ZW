@@ -19,21 +19,21 @@ export const HomeContent = () => {
         <div className={`flex ${isReverseLayout ? 'flex-col-reverse' : 'flex-col'}`}>
           <div className='flex flex-col space-y-6 lg:mr-64 lg:px-0 md:px-0 sm:px-0 px-10' >
             <div>
-            <h3 className='mt-4 mb-3 text-[20px] md:text-[24px] sm:text-[20px] font-light leading-relaxed'>
+            <h3 className='mt-4 mb-3 text-[20px] md:text-[24px] sm:text-[20px]  leading-relaxed'>
               For years, I expressed myself through storytelling in Bollywood.
             </h3>
-            <h3 className=' text-[20px] md:text-[24px] -mt-4 sm:text-[20px] font-light leading-relaxed'>
+            <h3 className=' text-[20px] md:text-[24px] -mt-4 sm:text-[20px]  leading-relaxed'>
             I connected deeply with the characters I portrayed, but over time, I felt a shift within me. Despite how well I fit into that world, I realized it wasn’t where I truly belonged.
             </h3>
             </div>
-            <h3 className=' text-[20px] md:text-[24px] sm:text-[20px] font-light leading-relaxed'>
+            <h3 className=' text-[20px] md:text-[24px] sm:text-[20px]  leading-relaxed'>
               In 2019, I stepped away, feeling the path no longer resonated with my true self. What I thought was success had distanced me from my inner peace. As I stepped back, I began a journey of rediscovering my purpose, one filled with reflection, growth, and a search for contentment.
             </h3>
-            <h3 className={`${!isReverseLayout ? 'hidden' : 'flex'} text-[20px] md:text-[24px] sm:text-[20px] font-light leading-relaxed`}>
+            <h3 className={`${!isReverseLayout ? 'hidden' : 'flex'} text-[20px] md:text-[24px] sm:text-[20px]  leading-relaxed`}>
               Through this ongoing journey, I’ve gained a new sense of purpose. Gradually, I became drawn to ideas that aligned with my evolving values. Now, I’m building Sustenance—a place for women to come together, find support, and share meaningful conversations rooted in faith and growth. It’s the kind of community I wish I had when navigating my own path.
             </h3>
             <Link to={'/about'}>
-            <h3 className={` ${isReverseLayout ? 'hidden' : 'flex'} text-[#A4A4A4] text-[20px] md:text-[22px] font-light hover:text-[#2226bc]`}>
+            <h3 className={` ${isReverseLayout ? 'hidden' : 'flex'} text-[#A4A4A4] text-[20px] md:text-[22px] hover:text-[#2226bc]`}>
               Read more...
             </h3>
           </Link>
