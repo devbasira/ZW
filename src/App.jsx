@@ -1,18 +1,15 @@
-import { useState } from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
+import AnimatedSection from "./components/AnimatedComponent";
+import IntroComponent from "./components/IntroComponent";
 
 function App() {
   return (
-    <div className="overflow-x-hidden">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </BrowserRouter>
+    <div className="">
+      <AnimatedSection />
+      <div className="w-screen z-10 bg-white flex  justify-center">
+      <IntroComponent />
+      </div>
+      
     </div>
   );
 }
