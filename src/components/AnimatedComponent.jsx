@@ -27,7 +27,7 @@ const AnimatedSection = () => {
         <motion.img
           src={photo}
           alt="Background"
-          className="fixed -z-25 bottom-0 top-[13%] w-[450px] h-[600px] md:w-[600px] md:h-[750px] lg:w-[750px] lg:h-[1000px] object-cover z-0"
+          className="fixed -z-25 bottom-0 lg:top-[13%] w-[450px] h-[600px] md:w-[600px] md:h-[750px] lg:w-[750px] lg:h-[1000px] object-cover z-0"
         />
         <div className="absolute top-[35%] lg:top-[22%] right-24 lg:left-[35%]">
         <motion.h1
