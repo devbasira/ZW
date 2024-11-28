@@ -20,6 +20,17 @@
   width: 150px;
   background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 100%);
 } 
+  /* @media (max-width: 450px)
+  {
+    .desktop{
+      display: none;
+    }
+    .mobile{
+      display: fixed;
+    }
+  }
+
+   */
 
   @media (max-width: 768px) {
     .red-overlay.left,
