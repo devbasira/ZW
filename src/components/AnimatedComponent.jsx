@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import photo from '../assets/ZW_Yellow.png'
-
+import '../App.css'
 const AnimatedSection = () => {
   const { scrollYProgress } = useScroll();
 
@@ -10,7 +10,7 @@ const AnimatedSection = () => {
   const textOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0]);
 
   return (
-    <div className="bg-[#FBB00A] -z-20 relative grid grid-rows-1 place-content-center">
+    <div className="background bg-[#FBB00A] -z-20 relative grid grid-rows-1 place-content-center">
       <motion.div className="relative row-span-1 w-full lg:w-[1200px] h-screen md:h-[1749px] lg:h-[1749px] flex items-center justify-center">
         <div className="absolute top-[45%] lg:top-[15%] -z-30 right-48  lg:left-[1%]">
         <motion.h1
