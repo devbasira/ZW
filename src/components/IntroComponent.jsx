@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import salam from '../assets/Bismillah.svg'
+import hamza from '../assets/Hamza.svg'
 
 function IntroComponent() {
     return (
@@ -34,9 +35,13 @@ function IntroComponent() {
                         \/ THE TRANSITION
                     </h2>
                     <div className="gap-[20px] flex flex-col mt-[10px]">
-                        <h2 className="text-[18px] lg:text-[24px] ">
+                        <div className='flex itema-center'>
+                        <img className = 'h-[48px] w-auto' src={hamza} alt="" />
+                        <h2 className="text-[18px] ml-4 lg:text-[24px] ">
                             What we don’t confront remains unchanged.
                         </h2>
+                        </div>
+                        
                         <p className="text-[18px] lg:text-[24px]">
                             So, I decided to confront this feeling and began a journey of self-discovery. I asked myself questions—some uncomfortable and difficult ones. The result of the journey was realizing that the life I was living wasn’t aligned with my innate nature or the purpose I was seeking.
                         </p>

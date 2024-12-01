@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import logo_yellow from '../assets/logo_yellow.svg';
-import hamza from '../assets/Hamza.svg'
+
 function Experience() {
     return (
         <motion.div
@@ -41,7 +41,6 @@ function Experience() {
                             Over these years, I’ve tried to embrace a life of meaning, purpose, and intention, even when it didn’t make sense to many.
                         </p>
                         <div className='flex items-center'>
-                        <img className = 'h-[48px] w-auto' src={hamza} alt="" />
                         <p className="text-[18px] lg:text-[24px]">
                             What I’ve learned hasn’t just transformed my inner world—it’s shaped how I show up, how I connect with others, and what I wish to bring to the world.
                         </p>
