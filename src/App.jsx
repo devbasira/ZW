@@ -1,14 +1,18 @@
 import "./App.css";
 import AnimatedSection from "./components/AnimatedComponent";
+import Experience from "./components/Experience";
 import { Footer } from "./components/Footer";
 import IntroComponent from "./components/IntroComponent";
+import Sustenance from "./components/Sustenance";
 
 function App() {
   return (
     <div className="">
       <AnimatedSection />
-      <div className="w-screen z-10 bg-white flex  justify-center">
+      <div className="w-screen z-10 bg-white flex flex-col  justify-center">
         <IntroComponent />
+        <Experience />
+        <Sustenance />
       </div>
       <Footer />
 
