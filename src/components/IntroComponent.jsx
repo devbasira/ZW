@@ -1,10 +1,14 @@
 import React from 'react';
 import logo_yellow from '../assets/logo_yellow.svg';
 import logo from '../assets/sustanence_logo.svg'
+import { motion } from 'framer-motion';
 
 function IntroComponent() {
     return (
-        <div className='w-screen flex flex-col items-center '>
+        <motion.div className='w-screen flex flex-col items-center'
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.0, ease: "easeOut",delay : 1 }}>
             <div className="lg:w-[1200px] w-full md:items-center items-center flex flex-col lg:items-start justify-between pt-[235px] gap-[100px] px-4 lg:px-0">
                 <h2 className="text-[26px] text-[#FBB00A]">
                     السلام عليكم!
@@ -50,7 +54,7 @@ function IntroComponent() {
                     <div className="gap-[30px] flex flex-col mt-[10px]">
                         <p className="text-[20px] lg:text-[24px]">
                             The answers I found were calls to action. They needed to be reflected in the way I lived. And so, in 2019, I made the decision to dissociate myself from the world of cinema and
-                            <p className="text-[#a80d28] underline">
+                            <p className="text-[#0A3C93] underline hover:cursor">
                                 announced it publicly.
                             </p>
                         </p>
@@ -88,7 +92,7 @@ function IntroComponent() {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
