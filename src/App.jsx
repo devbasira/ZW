@@ -8,10 +8,10 @@ function App() {
     <div className="">
       <AnimatedSection />
       <div className="w-screen z-10 bg-white flex  justify-center">
-      <IntroComponent />
+        <IntroComponent />
       </div>
       <Footer />
-      
+
     </div>
   );
 }
