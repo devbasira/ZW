@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import salam from '../assets/Bismillah.svg'
 
 function IntroComponent() {
     return (
@@ -10,10 +11,8 @@ function IntroComponent() {
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 1.0, ease: 'easeOut', delay: 0.5 }}
         >
-            <div className="lg:w-[1200px] w-full flex flex-col items-center lg:items-start justify-between pt-[80px] lg:pt-[235px] gap-[100px] px-4 lg:px-0">
-                <h2 className="text-[26px] text-[#FBB00A]">
-                    السلام عليكم!
-                </h2>
+            <div className="lg:w-[1200px] w-full flex flex-col items-center lg:items-start justify-between pt-[80px] lg:pt-[235px] gap-[100px] pr-[50px] pl-[25px] lg:pl-0 lg:pr-0">
+                <img className='h-[50px] w-auto' src={salam} alt="Salam" />
                 <div className="w-full lg:w-[922px] gap-[20px] flex flex-col">
                     <p className="text-[28px] lg:text-[44px]">
                         Hi, I’m Zaira Wasim.
@@ -23,7 +22,7 @@ function IntroComponent() {
                     </p>
                 </div>
             </div>
-            <div className="lg:w-[1200px] w-full flex flex-col items-center lg:items-end justify-between pt-[80px] lg:pt-[235px] px-4 lg:px-0">
+            <div className="lg:w-[1200px] w-full flex flex-col items-center lg:items-end justify-between pt-[80px] lg:pt-[235px] pr-[50px] pl-[25px] lg:pl-0 lg:pr-0">
                 <div className="w-full lg:w-[668px] flex flex-col gap-[48px]">
                     <h2 className="text-gray-400 text-[16px] lg:text-[22px]">
                         \ MY PAST
@@ -35,7 +34,7 @@ function IntroComponent() {
                         \/ THE TRANSITION
                     </h2>
                     <div className="gap-[20px] flex flex-col mt-[10px]">
-                        <h2 className="text-[18px] lg:text-[24px] text-[#FBB00A]">
+                        <h2 className="text-[18px] lg:text-[24px] ">
                             What we don’t confront remains unchanged.
                         </h2>
                         <p className="text-[18px] lg:text-[24px]">
