@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import salam from '../assets/Bismillah.svg'
 import hamza from '../assets/Hamza.svg'
 
 function IntroComponent() {
@@ -13,7 +12,10 @@ function IntroComponent() {
             transition={{ duration: 1.0, ease: 'easeOut', delay: 0.5 }}
         >
             <div className="lg:w-[1200px] w-full flex flex-col items-center lg:items-start justify-between pt-[80px] lg:pt-[235px] gap-[100px] pr-[50px] pl-[25px] lg:pl-0 lg:pr-0">
-                <img className='h-[50px] w-auto' src={salam} alt="Salam" />
+                <h1 className='text-[26px] font-[600] text-[#FBB00A]'>
+                    !السلام عليكم
+                </h1>
+                {/* <img className='h-[50px] w-auto' src={salam} alt="Salam" /> */}
                 <div className="w-full lg:w-[922px] gap-[20px] flex flex-col">
                     <p className="text-[28px] lg:text-[44px]">
                         Hi, I’m Zaira Wasim.
@@ -25,13 +27,13 @@ function IntroComponent() {
             </div>
             <div className="lg:w-[1200px] w-full flex flex-col items-center lg:items-end justify-between pt-[80px] lg:pt-[235px] pr-[50px] pl-[25px] lg:pl-0 lg:pr-0">
                 <div className="w-full lg:w-[668px] flex flex-col gap-[48px]">
-                    <h2 className="text-gray-400 text-[16px] lg:text-[22px]">
+                    <h2 className="text-gray-400 text-[16px] font-[700] lg:text-[24px]">
                         \ MY PAST
                     </h2>
                     <p className="text-[18px] lg:text-[24px] mt-[20px]">
                         I was part of the industry for years, but while being there, I felt a void—an unexplainable longing for something I couldn’t name or make sense of. Though I seemed to fit perfectly into that world, I knew deep down I didn’t truly belong there.
                     </p>
-                    <h2 className="text-gray-400 text-[16px] lg:text-[22px]">
+                    <h2 className="text-gray-400 font-[700] text-[16px] lg:text-[24px]">
                         \/ THE TRANSITION
                     </h2>
                     <div className="gap-[20px] flex flex-col mt-[10px]">

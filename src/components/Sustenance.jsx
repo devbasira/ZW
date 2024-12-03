@@ -16,7 +16,7 @@ export default function Sustenance() {
                         transition={{ duration: 1.0, ease: 'easeOut', delay: 0.3 }}
                     >
                         <img src={Nuqta} className='h-[36px] w-auto' alt="" />
-                        <h2 className="text-white text-lg lg:text-[22px]">
+                        <h2 className="text-white text-[16px] font-[700] lg:text-[24px]">
                             SUSTENANCE.COMMUNITY
                         </h2>
                     </motion.div>
@@ -35,7 +35,7 @@ export default function Sustenance() {
                                 alt="Sustenance Community Logo"
                             />
                         </div>
-                        <p className="text-lg lg:text-[24px] mt-4 lg:mt-[20px] text-white lg:w-[672px] text-left leading-8 lg:leading-10">
+                        <p className="text-lg lg:text-[24px] mt-4 lg:mt-[20px] text-white lg:w-[672px] text-left leading-8 lg:leading-9">
                             In many ways, Sustenance reflects how I've grown and who I strive to
                             be. It's a way for me to root myself in purpose while creating
                             something meaningful for others. It helps me guide myself while
@@ -43,7 +43,7 @@ export default function Sustenance() {
                             challenging yet fulfilling, and as beautiful as it is
                             transformative.
                         </p>
-                        <p className="text-lg lg:text-[24px] mt-4 lg:mt-[20px] text-white lg:w-[672px] text-left leading-8 lg:leading-10">
+                        <p className="text-lg lg:text-[24px] mt-4 lg:mt-[20px] text-white lg:w-[672px] text-left leading-8 lg:leading-9">
                             Sustenance isn't just for others—it's for me first. It's an
                             extension of my journey, intertwining my personal growth with a
                             broader purpose: to uplift and inspire others.
