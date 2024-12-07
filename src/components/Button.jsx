@@ -5,7 +5,7 @@ export function Button({ onClick, onEdit, onResubmit, isSubmitted, submittedData
         <div className="space-y-4">
             <button
                 onClick={onClick}
-                className={`bg-white text-black flex justify-center items-center py-[16px] px-[32px] hover:pointer hover:bg-[#242529] hover:text-white rounded-[50px]`}
+                className={`bg-[#FBB00A] text-[18px] text-black flex justify-center items-center py-[2px] px-[20px] hover:pointer hover:bg-white  rounded-[50px]`}
             >
                 {isSubmitted ? (
                     <div>
@@ -19,9 +19,8 @@ export function Button({ onClick, onEdit, onResubmit, isSubmitted, submittedData
                         )}
                     </div>
                 ) : (
-                    "Get in Touch"
-                )}
-            </button>
+                    "GET IN TOUCH"
+                )}            </button>
             {/* {isSubmitted && (
         <div className="flex justify-between text-xs mt-2">
           <button onClick={onEdit} className="px-3 py-1 text-blue-400 hover:text-blue-300 transition-colors">

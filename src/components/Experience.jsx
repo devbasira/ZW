@@ -68,10 +68,10 @@ function Experience() {
             transition={{ duration: 1.0, ease: 'easeOut', delay: 0.5 }}
         >
             <div className="lg:w-[1200px] w-full flex flex-col items-center lg:items-start justify-between pt-[80px] lg:pt-[235px] pb-[80px] lg:pb-[235px] pl-[25px] pr-[50px] lg:pl-0 lg:pr-0">
-                <div className="w-full lg:w-[672px] relative h-[200px] lg:h-[400px] lg:h-[600px] flex flex-col items-start">
+                <div className="w-full lg:w-[672px] relative h-[200px]  lg:h-[450px] flex flex-col items-start">
                     <img
                         src={logo_yellow}
-                        className="absolute left-[14px] bottom-[30px] lg:bottom-[63px] w-[100px] lg:w-[300px] h-[128px] lg:h-[384px]"
+                        className="absolute left-[14px] bottom-[30px] lg:bottom-[63px] w-[100px] lg:w-[300px] h-[128px] lg:h-[350px]"
                         alt="Logo"
                     />
                 </div>
@@ -82,13 +82,6 @@ function Experience() {
                     <div className="gap-[20px] lg:gap-[30px] flex flex-col mt-[10px]">
                         <div className="text-[18px] lg:text-[24px]">
                             The answers I found were calls to action. They needed to be reflected in the way I lived. And so, in 2019, I made the decision to dissociate myself from the world of cinema and
-                            {/* <a
-                                href="https://www.instagram.com/zairawasim_/p/BzUBXYrlsml/?img_index=1"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-[#0A3C93] ml-1 underline cursor-pointer">
-                                announced it publicly.
-                            </a> */}
                             <ExpandableArticle
                                 hyperlinkText="announced it publicly."
                                 articleTitle="A Journey of Self-Realization and Faith"

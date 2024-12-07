@@ -38,7 +38,7 @@ function IntroComponent() {
                     </h2>
                     <div className="gap-[20px] flex flex-col mt-[10px]">
                         <div className='flex itema-center'>
-                        <img className = 'h-[48px] w-auto' src={hamza} alt="" />
+                        <img className = 'h-[48px] w-auto ' src={hamza} alt="" />
                         <h2 className="text-[18px] ml-4 lg:text-[24px] ">
                             What we don’t confront remains unchanged.
                         </h2>

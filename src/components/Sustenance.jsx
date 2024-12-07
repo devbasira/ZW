@@ -35,18 +35,14 @@ export default function Sustenance() {
                                 alt="Sustenance Community Logo"
                             />
                         </div>
-                        <p className="text-lg lg:text-[24px] mt-4 lg:mt-[20px] text-white lg:w-[672px] text-left leading-8 lg:leading-9">
-                            In many ways, Sustenance reflects how I've grown and who I strive to
-                            be. It's a way for me to root myself in purpose while creating
-                            something meaningful for others. It helps me guide myself while
-                            guiding others. It's a two-way journey—personal yet shared,
-                            challenging yet fulfilling, and as beautiful as it is
-                            transformative.
+                        <p className="text-[24px] lg:text-[24px] mt-4 lg:mt-[20px] text-white lg:w-[672px] text-left leading-8 lg:leading-9">
+                        Sustenance is an attempt—an honest, imperfect, but deeply heartfelt attempt—to create a space where women like me can feel seen, supported, and understood. It’s not just about building a community; it’s about carving out a little corner in the world where faith, growth, and connection can thrive together.
                         </p>
-                        <p className="text-lg lg:text-[24px] mt-4 lg:mt-[20px] text-white lg:w-[672px] text-left leading-8 lg:leading-9">
-                            Sustenance isn't just for others—it's for me first. It's an
-                            extension of my journey, intertwining my personal growth with a
-                            broader purpose: to uplift and inspire others.
+                        <p className="text-[24px] lg:text-[24px] mt-4 lg:mt-[20px] text-white lg:w-[672px] text-left leading-8 lg:leading-9">
+                        In many ways, Sustenance is for me as much as it is for others. It’s a way of navigating my own questions, struggles, and aspirations while offering a hand to those on similar journeys. As I create this space, I find myself growing alongside it—learning, healing, and finding clarity in the process.
+                        </p>
+                        <p className="text-[24px] lg:text-[24px] mt-4 lg:mt-[20px] text-white lg:w-[672px] text-left leading-8 lg:leading-9">
+                        This isn’t about having it all figured out; it’s about trying. Trying to build something meaningful for women who, like me, are searching for comfort in connection and purpose in their growth. Sustenance is a shared path—one that’s challenging but deeply rewarding, and one I’m honored to walk with others.
                         </p>
                     </motion.div>
                 </div>
