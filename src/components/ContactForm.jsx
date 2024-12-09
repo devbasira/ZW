@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState} from 'react';
 
-export function ContactForm({ onSubmit, onCancel, initialData }) {
+export function ContactForm({ onSubmit, onCancel, initialData, formRef, isExpanded }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -11,8 +11,14 @@ export function ContactForm({ onSubmit, onCancel, initialData }) {
     setIsSubmitting(false);
   };
 
+
   return (
     <form onSubmit={handleSubmit} className="space-y-12 py-8">
+      <div>
+        <h2 className="text-white font-[700] text-[16px] lg:text-[24px]">
+          Get In Touch
+        </h2>
+      </div>
       <div className="space-y-12">
         <div className="relative">
           <input
@@ -28,7 +34,7 @@ export function ContactForm({ onSubmit, onCancel, initialData }) {
             htmlFor="name"
             className="absolute left-0 -top-6 text-sm text-white peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-6 peer-focus:text-sm transition-all"
           >
-            Name 
+            Name
           </label>
         </div>
         <div className="relative">
@@ -66,20 +72,20 @@ export function ContactForm({ onSubmit, onCancel, initialData }) {
           </label>
         </div>
       </div>
-      <div className="flex justify-between">
+      <div className="flex">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="bg-[#FBB00A] text-[18px] text-black flex justify-center items-center py-[2px] px-[20px] hover:pointer hover:bg-white  rounded-[50px]"
+        >
+          {isSubmitting ? 'Submitting...' : 'Submit'}
+        </button>
         <button
           type="button"
           onClick={onCancel}
           className="px-4 py-2 text-red-400 hover:text-red-300 transition-colors"
         >
           Cancel
-        </button>
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="px-4 py-2 text-green-400 hover:text-green-300 transition-colors disabled:opacity-50"
-        >
-          {isSubmitting ? 'Submitting...' : 'Submit'}
         </button>
       </div>
     </form>

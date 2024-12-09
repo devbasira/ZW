@@ -11,7 +11,10 @@ export default {
       },
       screens: {
         '4k': '2560px', // Define a custom breakpoint for 4K screens
-      }
+      },
+      fontFamily: {
+        cairo: ['Cairo', 'sans-serif'],
+      },
     }
   },
   plugins: [],

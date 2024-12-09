@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="">
       <AnimatedSection />
-      <div className="bg-[#F3F3F3] w-screen z-10 bg-white flex flex-col  justify-center">
+      <div className="bg-[#f3f3f3] w-screen z-10 bg-white flex flex-col  justify-center">
         <IntroComponent />
         <Experience />
         <Sustenance />

@@ -1,8 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState,useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import logo_yellow from '../assets/logo_yellow.svg';
-import ExpandableArticle from './ExpandibleArticle';
-
 
 const articleContent = `Five years ago, I made a decision that changed my life forever. Stepping into Bollywood opened doors to massive popularity, placing me at the center of public attention. I was portrayed as a role model for the youth and a symbol of success, but none of this aligned with my understanding of success or the purpose of my life.
 
@@ -58,9 +56,42 @@ Ameen.
 
 
 function Experience() {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const [showFullContent, setShowFullContent] = useState(false);
+    const announceRef = useRef(null);
+    const articleRef = useRef(null);
+
+    const truncateContent = (content, wordLimit) => {
+        const words = content.split(' ');
+        if (words.length > wordLimit) {
+            return words.slice(0, wordLimit).join(' ') + '...';
+        }
+        return content;
+    };
+
+    const scrollOnAnounce = () => {
+        setTimeout(() => {
+            announceRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+          }, 100);
+       
+    };
+
+    const scrollToSection = () => {
+        setTimeout(() => {
+            announceRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 1);
+       
+    };
+     const scrollToMiddle = () => {
+        setTimeout(() => {
+            articleRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 300);
+     }
+
 
     return (
         <motion.div
+            ref={announceRef}
             className="w-screen flex flex-col items-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +99,7 @@ function Experience() {
             transition={{ duration: 1.0, ease: 'easeOut', delay: 0.5 }}
         >
             <div className="lg:w-[1200px] w-full flex flex-col items-center lg:items-start justify-between pt-[80px] lg:pt-[235px] pb-[80px] lg:pb-[235px] pl-[25px] pr-[50px] lg:pl-0 lg:pr-0">
-                <div className="w-full lg:w-[672px] relative h-[200px]  lg:h-[450px] flex flex-col items-start">
+                <div className="w-full lg:w-[672px] relative h-[200px] lg:h-[450px] flex flex-col items-start">
                     <img
                         src={logo_yellow}
                         className="absolute left-[14px] bottom-[30px] lg:bottom-[63px] w-[100px] lg:w-[300px] h-[128px] lg:h-[350px]"
@@ -80,27 +111,90 @@ function Experience() {
                         \ MY JOURNEY
                     </h2>
                     <div className="gap-[20px] lg:gap-[30px] flex flex-col mt-[10px]">
-                        <div className="text-[18px] lg:text-[24px]">
-                            The answers I found were calls to action. They needed to be reflected in the way I lived. And so, in 2019, I made the decision to dissociate myself from the world of cinema and
-                            <ExpandableArticle
-                                hyperlinkText="announced it publicly."
-                                articleTitle="A Journey of Self-Realization and Faith"
-                                articleDate="June 30, 2019"
-                                articleContent={articleContent}
-                            />
+                        <div className='flex'>
+                            <p className="text-[18px] lg:text-[24px]">
+                                The answers I found were calls to action. They needed to be reflected in the way I lived. And so, in 2019, I made the decision to dissociate myself from the world of cinema and{' '}
+                                <span
+                                    onClick={() => {
+                                        setIsExpanded(!isExpanded)
+                                        if(isExpanded == false)
+                                        {
+                                            scrollOnAnounce()
+                                        }
+                                    }}
+                                    className="text-[#0A3C93] hover:text-blue-600 font-medium cursor-pointer"
+                                >
+                                    announced it publicly.
+                                </span>
+                            </p>
                         </div>
+
+                        <AnimatePresence>
+                            {isExpanded && (
+                                <motion.div
+                                ref = {articleRef}
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: 'auto' }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="z-20 px-[40px] bg-white py-[40px]  overflow-hidden"
+                                >
+                                    <div>
+                                        <div className="flex justify-between items-start mb-4">
+                                            <div>
+                                                <h2 className="text-[24px] font-bold text-gray-800 mb-1">
+                                                    A Journey to Find Purpose
+                                                </h2>
+                                                <p className="text-[16px] text-gray-500">Dated: 2019</p>
+                                            </div>
+                                        </div>
+                                        <div className="prose text-[21px] prose-sm max-w-none text-gray-600">
+                                            <div
+                                                dangerouslySetInnerHTML={{
+                                                    __html: (showFullContent
+                                                        ? articleContent
+                                                        : truncateContent(articleContent, 50))
+                                                        .replace(
+                                                            /\n\n(Losing Barakah|Finding Light in the Qur'an|A New Perspective|A Message for Others|Closing Thoughts)\n/g,
+                                                            '<h3 class="text-[21px] font-semibold mt-6 mb-3">$1</h3>'
+                                                        )
+                                                        .replace(
+                                                            /\n\n"(.+?)"\n/g,
+                                                            '<blockquote class="border-l-4 border-gray-300 pl-4 italic my-4">$1</blockquote>'
+                                                        ),
+                                                }}
+                                            />
+                                            <div className="flex mt-4 items-center text-[17px] gap-[20px]">
+                                                {!showFullContent && (
+                                                    <button
+                                                        onClick={() => {
+                                                            setShowFullContent(true)
+                                                            scrollToMiddle()
+                                                        }}
+                                                        className="text-[#0A3C93] text-[18px] hover:text-blue-800 font-medium"
+                                                    >
+                                                        read more...
+                                                    </button>
+                                                )}
+                                                <button
+                                                    onClick={() => {
+                                                        setIsExpanded(false);
+                                                        setShowFullContent(false);
+                                                        scrollToSection()
+                                                    }}
+                                                    className="px-[20px] font-[450] pb-[2px] bg-[#0a3c93] text-white text-[18px] rounded-full hover:bg-[#FBB00A] transition-colors duration-200"
+                                                >
+                                                    read later
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                         <p className="text-[18px] lg:text-[24px]">
                             It’s been almost five years since then—the same length of time I spent in the industry.
                         </p>
-                        <p className="text-[18px] lg:text-[24px]">
-                            Over these years, I’ve tried to embrace a life of meaning, purpose, and intention, even when it didn’t make sense to many.
-                        </p>
-                        <div className='flex items-center'>
-                        <p className="text-[18px] lg:text-[24px]">
-                            What I’ve learned hasn’t just transformed my inner world—it’s shaped how I show up, how I connect with others, and what I wish to bring to the world.
-                        </p>
-                        </div>
-                        
                     </div>
                 </div>
             </div>

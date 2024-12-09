@@ -12,7 +12,7 @@ function IntroComponent() {
             transition={{ duration: 1.0, ease: 'easeOut', delay: 0.5 }}
         >
             <div className="lg:w-[1200px] w-full flex flex-col items-center lg:items-start justify-between pt-[80px] lg:pt-[235px] gap-[100px] pr-[50px] pl-[25px] lg:pl-0 lg:pr-0">
-                <h1 className='text-[26px] font-[600] text-[#FBB00A]'>
+                <h1 className='text-[44px] font-[600] text-[#FBB00A] font-cairo'>
                     !السلام عليكم
                 </h1>
                 {/* <img className='h-[50px] w-auto' src={salam} alt="Salam" /> */}
