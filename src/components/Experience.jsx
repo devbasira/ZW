@@ -137,7 +137,7 @@ function Experience() {
                                     animate={{ opacity: 1, height: 'auto' }}
                                     exit={{ opacity: 0, height: 0 }}
                                     transition={{ duration: 0.3 }}
-                                    className="z-20 px-[40px] bg-white py-[40px]  overflow-hidden"
+                                    className="z-20 px-[40px] bg-white py-[40px] overflow-hidden"
                                 >
                                     <div>
                                         <div className="flex justify-between items-start mb-4">
