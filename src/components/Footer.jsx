@@ -48,7 +48,7 @@ export const Footer = () => {
         <div ref={ref} className="w-screen z-20 bg-[#292B31] flex pt-[150px] pb-[100px] flex-col justify-center items-center">
             <div className="w-full max-w-[1200px] items-center lg:items-start justify-center flex flex-col gap-[64px] px-4">
                 <div className="w-full flex justify-center">
-                    <div className="lg:w-full md:w-full space-y-4">
+                    <div className="lg:w-full md:w-full w-full lg:px-0 md:px-0 px-[50px] space-y-4">
                         {!isExpanded && (
                             <div className="space-y-4">
                                 {isSubmitted ? (
@@ -61,7 +61,7 @@ export const Footer = () => {
                                         )}
                                     </div>) : (<button
                                         onClick={handleClick}
-                                        className="bg-[#FBB00A] text-[18px] text-black flex justify-center items-center py-[2px] px-[20px] hover:pointer hover:bg-white  rounded-[50px]"
+                                        className="bg-[#FBB00A] text-[18px] text-black flex justify-center items-center py-[2px] px-[20px] hover:cursor-pointer hover:bg-white  rounded-[50px]"
                                     >
                                         GET IN TOUCH
                                     </button>
@@ -87,7 +87,7 @@ export const Footer = () => {
                                             </h2>
                                         </div>
                                         <div className="space-y-12">
-                                            <div className=" relative">
+                                            <div className="relative">
                                                 <input
                                                     id="name"
                                                     name="name"
@@ -139,13 +139,13 @@ export const Footer = () => {
                                                 </label>
                                             </div>
                                         </div>
-                                        <div className="flex">
+                                        <div className="flex items-center">
                                             <button
-                                                type="submit"
-                                                className="bg-[#FBB00A] text-[18px] text-black flex justify-center items-center py-[2px] px-[20px] hover:pointer hover:bg-white  rounded-[50px]"
+                                                className="bg-[#FBB00A] h-[30px] text-[18px] text-black flex justify-center items-center px-[20px] hover:cursor-pointer hover:bg-white rounded-[50px]"
                                             >
                                                 Submit
                                             </button>
+
                                             <button
                                                 type="button"
                                                 onClick={handleCancel}

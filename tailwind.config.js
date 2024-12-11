@@ -13,7 +13,7 @@ export default {
         '4k': '2560px', // Define a custom breakpoint for 4K screens
       },
       fontFamily: {
-        cairo: ['Cairo', 'sans-serif'],
+        tajawal: ['Tajawal', 'sans-serif'],
       },
     }
   },

@@ -1,4 +1,4 @@
-import React, { useState,useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo_yellow from '../assets/logo_yellow.svg';
 
@@ -60,6 +60,7 @@ function Experience() {
     const [showFullContent, setShowFullContent] = useState(false);
     const announceRef = useRef(null);
     const articleRef = useRef(null);
+    const initialScrollPosition = useRef(0);
 
     const truncateContent = (content, wordLimit) => {
         const words = content.split(' ');
@@ -69,30 +70,26 @@ function Experience() {
         return content;
     };
 
-    const scrollOnAnounce = () => {
-        setTimeout(() => {
-            announceRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
-          }, 100);
-       
-    };
+
 
     const scrollToSection = () => {
         setTimeout(() => {
-            announceRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-          }, 1);
-       
+            announceRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+        }, 400);
+
     };
-     const scrollToMiddle = () => {
+
+    const scrollToMiddle = () => {
         setTimeout(() => {
             articleRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-          }, 300);
-     }
+        }, 300);
+    }
 
 
     return (
         <motion.div
             ref={announceRef}
-            className="w-screen flex flex-col items-center"
+            className="w-screen bg-[#f3f3f3] flex flex-col items-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
@@ -102,12 +99,12 @@ function Experience() {
                 <div className="w-full lg:w-[672px] relative h-[200px] lg:h-[450px] flex flex-col items-start">
                     <img
                         src={logo_yellow}
-                        className="absolute left-[14px] bottom-[30px] lg:bottom-[63px] w-[100px] lg:w-[300px] h-[128px] lg:h-[350px]"
+                        className="absolute lg:left-[14px] bottom-[30px] lg:bottom-[63px] w-[130px] lg:w-[300px] h-auto lg:h-[350px]"
                         alt="Logo"
                     />
                 </div>
                 <div className="w-full lg:w-[672px] flex flex-col gap-[30px] lg:gap-[48px]">
-                    <h2 className="text-[#0A3C93] font-[700] text-[16px] lg:text-[24px]">
+                    <h2 className="text-[#0A3C93] font-[700] text-[18px] lg:text-[24px]">
                         \ MY JOURNEY
                     </h2>
                     <div className="gap-[20px] lg:gap-[30px] flex flex-col mt-[10px]">
@@ -117,46 +114,42 @@ function Experience() {
                                 <span
                                     onClick={() => {
                                         setIsExpanded(!isExpanded)
-                                        if(isExpanded == false)
-                                        {
+                                        if (isExpanded == false) {
+                                            initialScrollPosition.current = window.scrollY;
                                             scrollOnAnounce()
                                         }
                                     }}
-                                    className="text-[#0A3C93] hover:text-blue-600 font-medium cursor-pointer"
+                                    className="text-[#0A3C93] hover:text-[#FBB00A] font-medium cursor-pointer"
                                 >
                                     announced it publicly.
                                 </span>
                             </p>
                         </div>
-
                         <AnimatePresence>
                             {isExpanded && (
                                 <motion.div
-                                ref = {articleRef}
+                                    ref={articleRef}
                                     initial={{ opacity: 0, height: 0 }}
                                     animate={{ opacity: 1, height: 'auto' }}
-                                    exit={{ opacity: 0, height: 0 }}
-                                    transition={{ duration: 0.3 }}
+                                    transition={{ duration: 0.5 }}
                                     className="z-20 px-[40px] bg-white py-[40px] overflow-hidden"
                                 >
                                     <div>
                                         <div className="flex justify-between items-start mb-4">
                                             <div>
-                                                <h2 className="text-[24px] font-bold text-gray-800 mb-1">
+                                                <h2 className="lg:text-[24px] text-[18px] font-bold text-gray-800 mb-1">
                                                     A Journey to Find Purpose
                                                 </h2>
-                                                <p className="text-[16px] text-gray-500">Dated: 2019</p>
+                                                <p className="text-[16px] text-gray-500">30 June, 2019</p>
                                             </div>
                                         </div>
-                                        <div className="prose text-[21px] prose-sm max-w-none text-gray-600">
+                                        <div className="prose text-[18px] prose-sm max-w-none text-gray-600">
                                             <div
                                                 dangerouslySetInnerHTML={{
-                                                    __html: (showFullContent
-                                                        ? articleContent
-                                                        : truncateContent(articleContent, 50))
+                                                    __html: (showFullContent ? articleContent : truncateContent(articleContent, 50))
                                                         .replace(
                                                             /\n\n(Losing Barakah|Finding Light in the Qur'an|A New Perspective|A Message for Others|Closing Thoughts)\n/g,
-                                                            '<h3 class="text-[21px] font-semibold mt-6 mb-3">$1</h3>'
+                                                            '<h3 class="lg:text-[21px] text-[18px] font-semibold mt-6 mb-3">$1</h3>'
                                                         )
                                                         .replace(
                                                             /\n\n"(.+?)"\n/g,
@@ -168,8 +161,8 @@ function Experience() {
                                                 {!showFullContent && (
                                                     <button
                                                         onClick={() => {
-                                                            setShowFullContent(true)
-                                                            scrollToMiddle()
+                                                            setShowFullContent(true);
+                                                            scrollToMiddle();
                                                         }}
                                                         className="text-[#0A3C93] text-[18px] hover:text-blue-800 font-medium"
                                                     >
@@ -178,9 +171,11 @@ function Experience() {
                                                 )}
                                                 <button
                                                     onClick={() => {
-                                                        setIsExpanded(false);
-                                                        setShowFullContent(false);
-                                                        scrollToSection()
+                                                        setTimeout(() => {
+
+                                                            setIsExpanded(false);
+                                                            setShowFullContent(false);
+                                                        });
                                                     }}
                                                     className="px-[20px] font-[450] pb-[2px] bg-[#0a3c93] text-white text-[18px] rounded-full hover:bg-[#FBB00A] transition-colors duration-200"
                                                 >

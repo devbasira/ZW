@@ -5,14 +5,14 @@ import hamza from '../assets/Hamza.svg'
 function IntroComponent() {
     return (
         <motion.div
-            className="w-screen flex flex-col items-center"
+            className="w-screen bg-[#f3f3f3] flex flex-col items-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 1.0, ease: 'easeOut', delay: 0.5 }}
         >
-            <div className="lg:w-[1200px] w-full flex flex-col items-center lg:items-start justify-between pt-[80px] lg:pt-[235px] gap-[100px] pr-[50px] pl-[25px] lg:pl-0 lg:pr-0">
-                <h1 className='text-[44px] font-[600] text-[#FBB00A] font-cairo'>
+            <div className="lg:w-[1200px] w-full flex flex-col items-center lg:items-start justify-between pt-[80px] lg:pt-[235px] gap-[80px] pr-[50px] pl-[25px] lg:pl-0 lg:pr-0">
+                <h1 className='text-[32px] w-full  lg:text-[44px] font-[600] text-[#FBB00A] align-left font-tajawal'>
                     !السلام عليكم
                 </h1>
                 {/* <img className='h-[50px] w-auto' src={salam} alt="Salam" /> */}
@@ -27,13 +27,13 @@ function IntroComponent() {
             </div>
             <div className="lg:w-[1200px] w-full flex flex-col items-center lg:items-end justify-between pt-[80px] lg:pt-[235px] pr-[50px] pl-[25px] lg:pl-0 lg:pr-0">
                 <div className="w-full lg:w-[668px] flex flex-col gap-[48px]">
-                    <h2 className="text-gray-400 text-[16px] font-[700] lg:text-[24px]">
+                    <h2 className="text-gray-400 text-[18px] font-[700] lg:text-[24px]">
                         \ MY PAST
                     </h2>
                     <p className="text-[18px] lg:text-[24px] mt-[20px]">
                         I was part of the industry for years, but while being there, I felt a void—an unexplainable longing for something I couldn’t name or make sense of. Though I seemed to fit perfectly into that world, I knew deep down I didn’t truly belong there.
                     </p>
-                    <h2 className="text-gray-400 font-[700] text-[16px] lg:text-[24px]">
+                    <h2 className="text-gray-400 font-[700] text-[18px] lg:text-[24px]">
                         \/ THE TRANSITION
                     </h2>
                     <div className="gap-[20px] flex flex-col mt-[10px]">
