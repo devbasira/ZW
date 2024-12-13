@@ -89,13 +89,18 @@ function Experience() {
     return (
         <motion.div
             ref={announceRef}
-            className="w-screen bg-[#f3f3f3] flex flex-col items-center"
+            className="w-screen bg-[#f3f3f3] flex flex-col items-center overflow-y-auto"
+            // initial={{ opacity: 0, y: 50 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // viewport={{ once: true, amount: 0.1 }}
+            // transition={{ duration: 1.0, ease: 'easeOut', delay: 0.5 }}
+        >
+            <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 1.0, ease: 'easeOut', delay: 0.5 }}
-        >
-            <div className="lg:w-[1200px] w-full flex flex-col items-center lg:items-start justify-between pt-[80px] lg:pt-[235px] pb-[80px] lg:pb-[235px] pl-[25px] pr-[50px] lg:pl-0 lg:pr-0">
+            className="lg:w-[1200px] w-full flex flex-col items-center lg:items-start justify-between pt-[80px] lg:pt-[235px] pb-[80px] lg:pb-[235px] pl-[25px] pr-[50px] lg:pl-0 lg:pr-0">
                 <div className="w-full lg:w-[672px] relative h-[200px] lg:h-[450px] flex flex-col items-start">
                     <img
                         src={logo_yellow}
@@ -192,7 +197,7 @@ function Experience() {
                         </p>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </motion.div>
     );
 }
