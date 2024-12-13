@@ -7,6 +7,36 @@
   background-position-y: center;
   background-size: 150% 150%;
 }
+.custom-scrollbar {
+  direction: rtl;
+  overflow-y: scroll;
+  height: 380px;
+}
+
+.custom-scrollbar > * {
+  direction: ltr;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #0A3C93;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #fbb00a;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #dae4f3;
+  width: 2px;
+  border-radius: 4px;
+}
 
 
   .red-overlay {
@@ -15,6 +45,8 @@
     z-index: 10;
     
   }
+
+  
 
 
   .red-overlay.left {

@@ -6,10 +6,11 @@ import IntroComponent from "./components/IntroComponent";
 import Sustenance from "./components/Sustenance";
 
 function App() {
+
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
       <AnimatedSection />
-      <div className="bg-[#F3F3F3] w-screen z-10 bg-white flex flex-col  justify-center">
+      <div className="bg-[#F3F3F3] w-screen z-10 bg-white flex flex-col justify-center">
         <IntroComponent />
         <Experience />
         <Sustenance />
