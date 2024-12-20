@@ -8,14 +8,40 @@ import logo_yellow from "../assets/logo_yellow.svg";
 import sustanence_logo from "../assets/sustanence_logo.svg";
 import { db } from "../firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
-import { div } from "framer-motion/client";
 export const Footer = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isSubExpanded, setSubExpanded] = useState(false)
+  const [isSubscribed, setIsSubscribed] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submittedData, setSubmittedData] = useState(undefined);
+  const [subData,setSubData] = useState(undefined);
   const [loading, setIsLoading] = useState(false);
   const formRef = useRef(null);
   const ref = useRef(null);
+
+  const hadleSub = async (subData) => {
+    const name = subData.get("name");
+    const email = subData.get("email");
+    setIsLoading(true)
+    try {
+      const subscribe = await addDoc(
+        collection(db, "Subscriber"),{
+          name,
+          email,
+          time: new Date()
+        }
+      )
+      setSubmittedData({name,email});
+      setIsSubscribed(true);
+      setSubExpanded(false);
+    }
+    catch (e) {
+      console.error('Error', e)
+    }
+    finally {
+      setIsLoading(false);
+    }
+  }
 
   const handleSubmit = async (formData) => {
     const name = formData.get("name");
@@ -31,7 +57,6 @@ export const Footer = () => {
         time: new Date(),
       }
       )
-      console.log("Document written with ID: ", addContact);
       setSubmittedData({ name, email, message });
       setIsSubmitted(true);
       setIsExpanded(false);
@@ -46,6 +71,7 @@ export const Footer = () => {
     setIsExpanded(false);
   };
 
+
   const handleClick = () => {
     if (isSubmitted) {
       setIsSubmitted(false);
@@ -58,6 +84,19 @@ export const Footer = () => {
     }, 300);
   };
 
+  const handleSubClick = () => {
+    if (isSubscribed) {
+      setIsSubscribed(false);
+      setSubData(undefined);
+    }
+    setSubExpanded((prev) => !prev);
+
+    setTimeout(() => {
+      ref.current.scrollIntoView({ behavior: "smooth", block: "end" });
+    }, 300);
+
+  }
+
   return (
     <div
       ref={ref}
@@ -66,24 +105,46 @@ export const Footer = () => {
       <div className="w-full max-w-[1200px] items-center lg:items-start justify-center flex flex-col gap-[64px] px-4">
         <div className="w-full flex justify-center">
           <div className="lg:w-full md:w-full w-full lg:px-0 md:px-0 px-[50px] space-y-4">
-            {!isExpanded && (
-              <div className="space-y-4 flex lg:justify-start justify-center">
-                {isSubmitted ? (
-                  <div className="">
-                    <div className="text-[#FBB00A] text-[24px] font-medium">
-                      Thanks for your Interest!
+            <div className="flex lg:flex-row md:flex-row flex-col lg:space-y-0 md:space-y-0 lg:space-x-4 md:space-x-4 space-y-4">
+              {!isExpanded && (
+                <div className="space-y-4 flex lg:justify-start justify-center">
+                  {isSubmitted ? (
+                    <div className="">
+                      <div className="text-[#FBB00A] text-[24px] font-medium">
+                        Thanks for your Interest!
+                      </div>
                     </div>
+                  ) : (
+                    <button
+                      onClick={handleClick}
+                      className="bg-white w-[140px] text-[18px] text-black flex justify-center items-center py-[2px] px-[20px] hover:cursor-pointer hover:bg-[#FBB00A] rounded-[50px]"
+                    >
+                      Get In Touch
+                    </button>
+                  )}
+                </div>
+              )}
+              {
+                !isSubExpanded && (
+                  <div className="space-y-4 flex lg:justify-start justify-center">
+                    {isSubscribed ? (
+                      <div className="">
+                        <div className="text-[#FBB00A] text-[24px] font-medium">
+                          Thanks for Subscribing!
+                        </div>
+                      </div>
+                    ) : (
+                      <button
+                        onClick={handleSubClick}
+                        className="bg-white w-[140px] text-[18px] text-black flex justify-center items-center py-[2px] px-[20px] hover:cursor-pointer hover:bg-[#FBB00A] rounded-[50px]"
+                      >
+                        Subscribe
+                      </button>
+                    )}
                   </div>
-                ) : (
-                  <button
-                    onClick={handleClick}
-                    className="bg-[#FBB00A] text-[18px] text-black flex justify-center items-center py-[2px] px-[20px] hover:cursor-pointer hover:bg-white  rounded-[50px]"
-                  >
-                    Get In Touch
-                  </button>
-                )}
-              </div>
-            )}
+                )
+              }
+            </div>
             <AnimatePresence>
               {isExpanded && (
                 <motion.div
@@ -181,6 +242,86 @@ export const Footer = () => {
                   </form>
                 </motion.div>
               )}
+              {
+                isSubExpanded && (
+                  <motion.div
+                    key="form"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <form
+                      onSubmit={async (e) => {
+                        e.preventDefault();
+                        const subsData = new FormData(e.currentTarget);
+                        await hadleSub(subsData)
+                      }}
+                      className="space-y-12 py-8">
+                      <div>
+                        <div className="space-y-12">
+                          <h2 className="text-white font-[700] text-[16px] lg:text-[24px]">
+                            Subscribe
+                          </h2>
+                          <div className="relative">
+                            <input
+                              id="name"
+                              name="name"
+                              type="text"
+                              required
+                              defaultValue={submittedData?.name}
+                              className="peer w-full text-gray-300 bg-transparent border-b border-zinc-700 py-3 outline-none transition-colors focus:border-zinc-100 placeholder:text-transparent"
+                              placeholder="Name"
+                            />
+                            <label
+                              htmlFor="name"
+                              className="absolute left-0 -top-6 text-sm text-white peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-6 peer-focus:text-sm transition-all"
+                            >
+                              Name
+                            </label>
+                          </div>
+                          <div className="relative">
+                            <input
+                              id="email"
+                              name="email"
+                              type="email"
+                              required
+                              defaultValue={submittedData?.email}
+                              className="peer w-full text-gray-300 bg-transparent border-b border-zinc-700 py-3 outline-none transition-colors focus:border-zinc-100 placeholder:text-transparent"
+                              placeholder="Email"
+                            />
+                            <label
+                              htmlFor="email"
+                              className="absolute left-0 -top-6 text-sm text-white peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-6 peer-focus:text-sm transition-all"
+                            >
+                              Email
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      {loading ? (
+                        <div className="text-[#FBB00A] text-[18px] font-medium">
+                          Submitting....
+                        </div>
+                      ) : (
+                        <div className="flex items-center">
+                          <button className="bg-[#FBB00A] h-[30px] text-[18px] text-black flex justify-center items-center px-[20px] hover:cursor-pointer hover:bg-white rounded-[50px]"
+                          >
+                            Submit
+                          </button>
+
+                          <button
+                            type="button"
+                            onClick={() => setSubExpanded(false)}
+                            className="px-4 py-2 text-red-400 hover:text-red-300 transition-colors"
+                          >
+                            Cancel
+                          </button>
+                        </div>
+                      )}
+                    </form>
+                  </motion.div>
+                )
+              }
             </AnimatePresence>
           </div>
         </div>
