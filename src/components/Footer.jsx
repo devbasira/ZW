@@ -14,7 +14,7 @@ export const Footer = () => {
   const [isSubscribed, setIsSubscribed] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submittedData, setSubmittedData] = useState(undefined);
-  const [subData,setSubData] = useState(undefined);
+  const [subData, setSubData] = useState(undefined);
   const [loading, setIsLoading] = useState(false);
   const formRef = useRef(null);
   const ref = useRef(null);
@@ -25,13 +25,13 @@ export const Footer = () => {
     setIsLoading(true)
     try {
       const subscribe = await addDoc(
-        collection(db, "Subscriber"),{
-          name,
-          email,
-          time: new Date()
-        }
+        collection(db, "Subscriber"), {
+        name,
+        email,
+        time: new Date()
+      }
       )
-      setSubmittedData({name,email});
+      setSubmittedData({ name, email });
       setIsSubscribed(true);
       setSubExpanded(false);
     }
@@ -115,12 +115,14 @@ export const Footer = () => {
                       </div>
                     </div>
                   ) : (
-                    <button
-                      onClick={handleClick}
-                      className="bg-white w-[140px] text-[18px] text-black flex justify-center items-center py-[2px] px-[20px] hover:cursor-pointer hover:bg-[#FBB00A] rounded-[50px]"
-                    >
-                      Get In Touch
-                    </button>
+                    isSubExpanded === false && (
+                      <button
+                        onClick={handleClick}
+                        className="bg-white w-[140px] text-[18px] text-black flex justify-center items-center py-[2px] px-[20px] hover:cursor-pointer hover:bg-[#FBB00A] rounded-[50px]"
+                      >
+                        Get In Touch
+                      </button>
+                    )
                   )}
                 </div>
               )}
@@ -134,6 +136,7 @@ export const Footer = () => {
                         </div>
                       </div>
                     ) : (
+                      isExpanded === false &&
                       <button
                         onClick={handleSubClick}
                         className="bg-white w-[140px] text-[18px] text-black flex justify-center items-center py-[2px] px-[20px] hover:cursor-pointer hover:bg-[#FBB00A] rounded-[50px]"
@@ -163,7 +166,7 @@ export const Footer = () => {
                     className="space-y-12 py-8"
                   >
                     <div>
-                      <h2 className="text-white font-[700] text-[16px] lg:text-[24px]">
+                      <h2 className="text-[#FBB00A] font-[700] text-[20px] lg:text-[32px]">
                         Get In Touch
                       </h2>
                     </div>
@@ -259,7 +262,7 @@ export const Footer = () => {
                       className="space-y-12 py-8">
                       <div>
                         <div className="space-y-12">
-                          <h2 className="text-white font-[700] text-[16px] lg:text-[24px]">
+                          <h2 className="text-[#FBB00A] font-[700] text-[20px] lg:text-[32px]">
                             Subscribe
                           </h2>
                           <div className="relative">
