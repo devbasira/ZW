@@ -6,11 +6,14 @@ import { SiSubstack } from "react-icons/si";
 import { motion, AnimatePresence } from "framer-motion";
 import logo_yellow from "../assets/logo_yellow.svg";
 import sustanence_logo from "../assets/sustanence_logo.svg";
-
+import { db } from "../firebaseConfig";
+import { collection, addDoc } from "firebase/firestore";
+import { div } from "framer-motion/client";
 export const Footer = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submittedData, setSubmittedData] = useState(undefined);
+  const [loading, setIsLoading] = useState(false);
   const formRef = useRef(null);
   const ref = useRef(null);
 
@@ -18,13 +21,25 @@ export const Footer = () => {
     const name = formData.get("name");
     const email = formData.get("email");
     const message = formData.get("message");
-
-    console.log("Form submitted:", { name, email, message });
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    setSubmittedData({ name, email, message });
-    setIsSubmitted(true);
-    setIsExpanded(false);
+    setIsLoading(true);
+    try {
+      const addContact = await addDoc(
+        collection(db, "formSubmission"), {
+        name,
+        email,
+        message,
+        time: new Date(),
+      }
+      )
+      console.log("Document written with ID: ", addContact);
+      setSubmittedData({ name, email, message });
+      setIsSubmitted(true);
+      setIsExpanded(false);
+    } catch (e) {
+      console.error('Error', e)
+    } finally {
+      setIsLoading(false)
+    }
   };
 
   const handleCancel = () => {
@@ -144,19 +159,25 @@ export const Footer = () => {
                         </label>
                       </div>
                     </div>
-                    <div className="flex items-center">
-                      <button className="bg-[#FBB00A] h-[30px] text-[18px] text-black flex justify-center items-center px-[20px] hover:cursor-pointer hover:bg-white rounded-[50px]">
-                        Submit
-                      </button>
+                    {loading ? (
+                      <div className="text-[#FBB00A] text-[18px] font-medium">
+                        Submitting....
+                      </div>
+                    ) : (
+                      <div className="flex items-center">
+                        <button className="bg-[#FBB00A] h-[30px] text-[18px] text-black flex justify-center items-center px-[20px] hover:cursor-pointer hover:bg-white rounded-[50px]">
+                          Submit
+                        </button>
 
-                      <button
-                        type="button"
-                        onClick={handleCancel}
-                        className="px-4 py-2 text-red-400 hover:text-red-300 transition-colors"
-                      >
-                        Cancel
-                      </button>
-                    </div>
+                        <button
+                          type="button"
+                          onClick={handleCancel}
+                          className="px-4 py-2 text-red-400 hover:text-red-300 transition-colors"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    )}
                   </form>
                 </motion.div>
               )}
