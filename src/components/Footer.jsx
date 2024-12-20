@@ -332,10 +332,10 @@ export const Footer = () => {
           <div className="w-full flex flex-col md:flex-row gap-[40px] md:gap-[200px]">
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-8 text-sm">
               <a
-                href="https://substack.com/"
+                // href="https://substack.com/"
                 className="hover:underline transition duration-200 text-white text-[22px] leading-8"
-                target="_blank"
-                rel="noopener noreferrer"
+                // target="_blank"
+                // rel="noopener noreferrer"
               >
                 <SiSubstack className="text-white w-6 h-6" />
               </a>
