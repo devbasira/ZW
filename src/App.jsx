@@ -15,7 +15,7 @@ function App() {
         <Experience />
         <Sustenance />
       </div>
-      <Footer />
+      <Footer /> 
     </div>
   );
 }

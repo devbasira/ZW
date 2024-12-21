@@ -10,7 +10,9 @@ export default {
         '1800px': '1800px', // Custom width
       },
       screens: {
-        '4k': '2560px', // Define a custom breakpoint for 4K screens
+        '4k': '2560px',
+        'tab': '1024px',
+                         // Define a custom breakpoint for 4K screens
       },
       fontFamily: {
         tajawal: ['Tajawal', 'sans-serif'],

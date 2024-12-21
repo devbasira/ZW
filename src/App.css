@@ -1,6 +1,5 @@
-
-.background{
-  background-image:url('./assets/background.svg');
+.background {
+  background-image: url("./assets/background.svg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position-x: center;
@@ -18,13 +17,12 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-
   width: 8px;
   height: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #0A3C93;
+  background: #0a3c93;
   border-radius: 4px;
 }
 
@@ -38,41 +36,51 @@
   border-radius: 4px;
 }
 
+.red-overlay {
+  top: 0;
+  height: 100%;
+  z-index: 10;
+}
 
-  .red-overlay {
-    top: 0;
-    height: 100%;
-    z-index: 10;
-    
-  }
-
-  
-
-
-  .red-overlay.left {
+.red-overlay.left {
   left: 0;
   position: absolute;
   width: 150px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 100%);
-  }
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
 
 .red-overlay.right {
   position: absolute;
   right: 0;
   width: 150px;
-  background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 100%);
-} 
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
 
-  @media (max-width: 768px) {
-    .red-overlay.left,
-    .red-overlay.right {
-      width: 100px; /* Reduce overlay width on smaller screens */
-    }
-
-    .animate-scroll { 
-      animation:  5s slide linear infinite;
-      position: relative; /* Adjust timing for smooth scroll */
-    }
+@media (max-width: 768px) {
+  .red-overlay.left,
+  .red-overlay.right {
+    width: 100px; /* Reduce overlay width on smaller screens */
   }
 
-
+  .animate-scroll {
+    animation: 5s slide linear infinite;
+    position: relative; /* Adjust timing for smooth scroll */
+  }
+}
+/* 
+@media (min-width: 1024px) {
+  .main {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+} */
