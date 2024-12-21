@@ -12,7 +12,10 @@ function IntroComponent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 1.0, ease: 'easeOut', delay: 0.5 }}
-                className="lg:w-[1200px] w-full flex flex-col items-center lg:items-start justify-between pt-[80px] lg:pt-[235px] gap-[80px] pr-[50px] pl-[25px] lg:pl-0 lg:pr-0">
+                className="w-full flex flex-col items-center justify-between 
+                pt-[80px] pr-[50px] pl-[25px] gap-[80px]
+                lg:w-[1200px] lg:items-start lg:pt-[235px] md:px-[10%] lg:pl-0 lg:pr-0
+                ipad-pro:items-start ipad-pro:pt-[180px] ipad-pro:px-[10%]">
                 <h1 className='text-[32px] w-full  lg:text-[44px] font-[600] text-[#FBB00A] align-left font-tajawal'>
                     !السلام عليكم
                 </h1>
@@ -31,7 +34,7 @@ function IntroComponent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 1.0, ease: 'easeOut', delay: 0.5 }}
-                className="lg:w-[1200px] w-full flex flex-col items-center lg:items-end justify-between pt-[80px] lg:pt-[235px] pr-[50px] pl-[25px] lg:pl-0 lg:pr-0">
+                className="lg:w-[1200px] w-full flex flex-col items-center lg:items-end justify-between pt-[80px] lg:pt-[235px] pr-[50px] pl-[25px] lg:pl-0 lg:pr-0 md:px-[10%] ipad-pro:items-end ipad-pro:pt-[180px] ipad-pro:px-[10%]">
                 <div className="w-full lg:w-[668px] flex flex-col gap-[48px]">
                     <h2 className="text-gray-400 text-[18px] font-[700] lg:text-[24px]">
                         \ MY PAST

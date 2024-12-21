@@ -20,7 +20,7 @@ const AnimatedSection = () => {
       style={{ backgroundSize }}
     >
       <motion.div className="relative row-span-1 w-full lg:w-[1200px] h-screen md:h-[1749px] lg:h-[1749px] flex items-center justify-center">
-        <div className="absolute bg-green-400 bottom-[60%] text:start lg:bottom-[90%] -z-30 right-48 lg:left-[1%]"
+        <div className="absolute bottom-[60%] md:bottom-[70%] md:right-60 md:mr-32 ipad-pro:bottom-[75%] text:start lg:bottom-[90%] -z-30 right-48 lg:left-[1%]"
         >
           <motion.h1
           initial={{ opacity: 0 }}
@@ -44,7 +44,7 @@ const AnimatedSection = () => {
           transition={{ duration: 3.0, ease: "easeOut" }}
           className="fixed -z-25 bottom-[-5%] lg:bottom-[0%] w-auto h-[75vh] md:w-[600px] md:h-[750px]  lg:h-[80vh] lg:w-auto object-contain z-0"
         />
-        <div className="absolute bottom-[52%] lg:bottom-[80%] right-24 lg:left-[35%]">
+        <div className="absolute bottom-[52%] ipad-pro:bottom-[65%] lg:bottom-[80%] md:bottom-[61%] right-24 md:right-60 lg:left-[35%]">
           <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1,}}

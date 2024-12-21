@@ -7,7 +7,7 @@ export default function Sustenance() {
     return (
         <motion.div
             className=" w-screen flex flex-col items-center">
-            <motion.div className="main w-full bg-[#0A3C93] py-16 lg:py-[235px] pl-[25px] pr-[50px] md:px-[10%] tab:px-[10%] lg:pl-0 lg:pr-0">
+            <motion.div className="main w-full bg-[#0A3C93] py-16 lg:py-[235px] pl-[25px] pr-[50px] md:px-[10%] ipad-pro:px-[10%] lg:pl-0 lg:pr-0">
                 <div className="max-w-[1200px] mx-auto flex flex-col items-start lg:items-center justify-center gap-8 lg:gap-[48px]">
                     <motion.div className="w-full items-center flex gap-6"
                         initial={{ opacity: 0, y: 50 }}

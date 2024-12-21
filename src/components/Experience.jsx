@@ -21,7 +21,11 @@ function Experience() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.0, ease: 'easeOut', delay: 0.5 }}
-                className="lg:w-[1200px] lg:ml-2  w-full flex flex-col items-center lg:items-start justify-between pt-[80px] lg:pt-[235px] pb-[80px] lg:pb-[235px] pl-[25px] pr-[50px] lg:pl-[0px] lg:pr-[0px]">
+                className="w-full flex flex-col items-center justify-between 
+                pt-[80px] pb-[80px] pl-[25px] pr-[50px]
+                lg:w-[1200px] lg:ml-2 lg:items-start lg:pt-[235px] lg:pb-[235px] lg:pl-[0px] lg:pr-[0px]
+                md:pt-[150px] md:pb-[150px] md:px-[10%]
+                ipad-pro:pt-[200px] ipad-pro:pb-[200px] ipad-pro:px-[10%]">
                 <div className="w-full lg:w-[672px] relative h-[200px] lg:h-[450px] flex flex-col items-start">
                     <img
                         src={logo_yellow}

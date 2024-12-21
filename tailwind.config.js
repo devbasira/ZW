@@ -11,8 +11,11 @@ export default {
       },
       screens: {
         '4k': '2560px',
-        'tab': '1024px',
-                         // Define a custom breakpoint for 4K screens
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        'ipad-pro': { min: '1024px', max: '1366px' },
       },
       fontFamily: {
         tajawal: ['Tajawal', 'sans-serif'],
