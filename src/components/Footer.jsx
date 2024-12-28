@@ -8,6 +8,7 @@ import logo_yellow from "../assets/logo_yellow.svg";
 import sustanence_logo from "../assets/sustanence_logo.svg";
 import { db } from "../firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
+import ReCAPTCHA from "react-google-recaptcha";
 export const Footer = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isSubExpanded, setSubExpanded] = useState(false);
@@ -19,9 +20,19 @@ export const Footer = () => {
   const formRef = useRef(null);
   const ref = useRef(null);
 
+  //for capthca
+  const [TouchCapthca, setTouchCapthca] = useState(null);
+  const [subCaptcha, setSubCapthca] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const hadleSub = async (subData) => {
     const name = subData.get("name");
     const email = subData.get("email");
+    if (subCaptcha === null) {
+      setErrorMessage("Please complete the CAPTCHA!");
+      setTimeout(() => setErrorMessage(""), 1000); // Remove the message after 1 second
+      return;
+    }
     setIsLoading(true);
     try {
       const subscribe = await addDoc(collection(db, "Subscriber"), {
@@ -220,10 +231,21 @@ export const Footer = () => {
                       </div>
                     ) : (
                       <div className="flex items-center">
-                        <button className="bg-[#FBB00A] h-[30px] text-[18px] text-black flex justify-center items-center px-[20px] hover:cursor-pointer hover:bg-white rounded-[50px]">
+                        <button
+                          disabled={TouchCapthca === null}
+                          className={`bg-[#FBB00A] h-[30px] text-[18px] text-black flex justify-center items-center px-[20px] rounded-[50px] ${
+                            TouchCapthca === null
+                              ? "cursor-not-allowed opacity-50"
+                              : "hover:cursor-pointer hover:bg-white"
+                          }`}
+                        >
                           Submit
                         </button>
-
+                        {errorMessage && (
+                          <span className="text-red-500 text-sm font-medium">
+                            {errorMessage}
+                          </span>
+                        )}
                         <button
                           type="button"
                           onClick={handleCancel}
@@ -232,6 +254,12 @@ export const Footer = () => {
                           Cancel
                         </button>
                       </div>
+                    )}
+                    {TouchCapthca === null && (
+                      <ReCAPTCHA
+                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                        onChange={(value) => setTouchCapthca(value)}
+                      />
                     )}
                   </form>
                 </motion.div>
@@ -298,9 +326,21 @@ export const Footer = () => {
                       </div>
                     ) : (
                       <div className="flex items-center">
-                        <button className="bg-[#FBB00A] h-[30px] text-[18px] text-black flex justify-center items-center px-[20px] hover:cursor-pointer hover:bg-white rounded-[50px]">
+                        <button
+                          disabled={subCaptcha === null}
+                          className={`bg-[#FBB00A] h-[30px] text-[18px] text-black flex justify-center items-center px-[20px] rounded-[50px] ${
+                            subCaptcha === null
+                              ? "cursor-not-allowed opacity-50"
+                              : "hover:cursor-pointer hover:bg-white"
+                          }`}
+                        >
                           Submit
                         </button>
+                        {errorMessage && (
+                          <span className="text-red-500 text-sm font-medium">
+                            {errorMessage}
+                          </span>
+                        )}
 
                         <button
                           type="button"
@@ -310,6 +350,12 @@ export const Footer = () => {
                           Cancel
                         </button>
                       </div>
+                    )}
+                    {subCaptcha === null && (
+                      <ReCAPTCHA
+                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                        onChange={(value) => setSubCapthca(value)}
+                      />
                     )}
                   </form>
                 </motion.div>

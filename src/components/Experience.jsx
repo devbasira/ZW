@@ -16,10 +16,10 @@ function Experience() {
 
     return (
         <motion.div
-            className="w-screen bg-[#f3f3f3] flex flex-col items-center overflow-y-auto">
+            className="w-full bg-[#f3f3f6] flex flex-col items-center overflow-y-auto overflow-x-hidden">
             <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 50, x: 0 }}
+                whileInView={{ opacity: 1, y: 0, x: 0 }}                
                 transition={{ duration: 1.0, ease: 'easeOut', delay: 0.5 }}
                 className="w-full flex flex-col items-center justify-between 
                 pt-[80px] pb-[80px] pl-[25px] pr-[50px]
@@ -29,7 +29,7 @@ function Experience() {
                 <div className="w-full lg:w-[672px] relative h-[200px] lg:h-[450px] flex flex-col items-start">
                     <img
                         src={logo_yellow}
-                        className="absolute bottom-[30px] lg:bottom-[63px] w-[130px] lg:w-[275px] h-auto lg:h-[350px]"
+                        className="absolute bottom-[30px] lg:bottom-[63px] w-[130px] lg:w-[275px] h-auto lg:h-[350px] overflow-x-hidden"
                         alt="Logo"
                     />
                 </div>
